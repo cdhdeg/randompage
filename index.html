@@ -64,12 +64,11 @@
                             if (data && data.dataseries) {
                                     let weather = 'Weather for London\n';
                                     for (let entry of data['dataseries']) {
-                                            let windspeed10m = entry['windspeed10m'] ? entry['windspeed10m'] : 'N/A';
                                             weather += `
                                             Date: ${entry['date']}\n
                                             Temperature: ${entry['temp2m']}°C\n
                                             Weather: ${entry['weather']}\n
-                                            Wind Speed: ${windspeed10m} km/h\n
+                                            Wind Speed: ${entry[wind10m_max]} km/h\n
                                             `;
                                     }
                                     weatherContainer.innerText = weather; // Display the weather data
