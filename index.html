@@ -62,12 +62,16 @@
           function displayWeather(data) {
               const weatherContainer = document.getElementById('weather');
               if (data && data.dataseries) {
-                  const forecast = data.dataseries[0];
-                  weatherContainer.innerHTML = `<strong>Weather Forecast for London:</strong> <br>
-                      Date: ${forecast.date}<br>
-                      Weather: ${forecast.weather}<br>
-                      Max Temp: ${forecast.temp2m.max} °C<br>
-                      Min Temp: ${forecast.temp2m.min} °C`;
+                  let weather = 'Weather for London\n';
+                  for (let entry of data['dataseries']) {
+                      let windspeed10m = entry['windspeed10m'] ? entry['windspeed10m'] : 'N/A';
+                      weather += `
+                      Date: ${entry['date']}\n
+                      Temperature: ${entry['temp2m']}°C\n
+                      Weather: ${entry['weather']}\n
+                      Wind Speed: ${windspeed10m} km/h\n
+                      `;
+                  }
               } else {
                   weatherContainer.innerText = "No forecast data available.";
               }
