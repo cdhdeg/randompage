@@ -1,143 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Random Github Page - London Weather</title>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style>
-            section{
-                padding: 2rem;
-            }
-            .p-datatable {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            .p-datatable thead {
-                background-color: #f8f9fa;
-            }
-
-            .p-datatable th,
-            .p-datatable td {
-                padding: 0.5rem;
-                border: 1px solid #dee2e6;
-            }
-
-            .p-datatable tbody tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-
-            form label {
-                display: block;
-                padding: 1rem 0;
-            }
-
-            form input,
-            form textarea {
-                width: 100%;
-                padding: 0.5rem;
-                border: 1px solid #dee2e6;
-                border-radius: 0.25rem;
-            }
-
-            form button {
-                background-color: #4c51bf;
-                color: #fff;
-                font-weight: bold;
-                padding: 0.5rem 1rem;
-                border-radius: 0.25rem;
-                cursor: pointer;
-            }
-
-            form button:hover {
-                background-color: #434190;
-            }
-        </style>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dukes Hub Launch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ead5d2;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            color: white;
+            padding: 10px 0;
+            background-color: #221C35;
+            position: relative;
+            width: 100vw;
+        }
+        header > .container {
+            position: relative;
+        }
+        .logo{
+            height: 30px;
+            position: relative;
+            display: block;
+        }
+        .cta{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 50px;
+            background-color: #ead5d2;
+            border-radius: 3px;
+            padding: 10px 20px;
+            text-align: baseline;
+            text-decoration: none;
+            color: #221C35;
+        }
+        .button{
+            text-transform: uppercase;
+            background-color: white;
+            color: #221C35;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .greeting {
+            background: url("https://cdn5.dcbstatic.com/files/d/u/dukeshub_docebosaas_com/1717614000/Zs5vkBRv6HPeVHC31_ugGA/uploads/1ac68f70c9ee7494e3f40bb2535b1c3921344898.png") no-repeat center;
+            background-size: cover;
+            height: 260px;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            margin: 0;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+        }
+        .content {
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .video {
+            margin: 20px 0;
+        }
+        .login-guide {
+            margin: 20px 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-guide h2 {
+            color: #221C35;
+        }
+        .login-guide p {
+            margin: 10px 0;
+        }
+        .login-buttons {
+            margin: 20px 0;
+        }
+        .login-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #221C35;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #221C35;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
         <div class="container">
-            <section>
-                <h1 class="text-4xl font-bold">Random Page</h1>
-                <p>Hosting a random page on Github!</p>
-                <h2 class="text-2xl font-bold">London Weather Forecast</h2>
-                <div id="weather">
-                    <table class="table-auto p-datatable">
-                        <thead>
-                            <tr>
-                                <th class="px-4 py-2">Date</th>
-                                <th class="px-4 py-2">Temperature (°C)</th>
-                                <th class="px-4 py-2">Weather</th>
-                                <th class="px-4 py-2">Wind Speed (km/h)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="entry in weatherData" :key="entry.date">
-                                <td class="px-4 py-2">{{ entry.date }}</td>
-                                <td class="px-4 py-2">{{ entry.temp2m }}</td>
-                                <td class="px-4 py-2">{{ entry.weather }}</td>
-                                <td class="px-4 py-2">{{ entry.wind10m_max }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <section>
-                <h2 class="text-2xl font-bold">Contact</h2>
-                <!-- modify this form HTML and place wherever you want your form -->
-                <form
-                    action="https://formspree.io/f/mpzvbapg"
-                    method="POST"
-                >
-                    <label class="block">
-                        Your email:
-                        <input type="email" name="email" class="border border-gray-300 rounded-md px-4 py-2">
-                    </label>
-                    <label class="block">
-                        Your message:
-                        <textarea name="message" class="border border-gray-300 rounded-md px-4 py-2"></textarea>
-                    </label>
-                    <!-- your other form fields go here -->
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send</button>
-                </form>
-            </section>
+            <img class="logo" src="https://dukeseducation.com/wp-content/themes/custom-theme/assets/img/logo-white.png" />
+            <a href="https://app.dukeshub.com/" class="cta button">Go to the Hub</a>
         </div>
-         
-        
-        <!-- Vue -->
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-        <script>
-            new Vue({
-                el: '#weather',
-                data: {
-                    weatherData: []
-                },
-                mounted() {
-                    this.fetchWeather();
-                },
-                methods: {
-                    async fetchWeather() {
-                        try {
-                            const latitude = 51.5074;  // London latitude
-                            const longitude = -0.1278; // London longitude
-                            const url = `https://www.7timer.info/bin/civillight.php?lon=${longitude}&lat=${latitude}&output=json`;
-                            const response = await fetch(url);
-                            if (!response.ok) {
-                                throw new Error(`HTTP error! status: ${response.status}`);
-                            }
-                            const data = await response.json();
-                            this.weatherData = data.dataseries;
-                        } catch (error) {
-                            console.error("Failed to retrieve the weather data: ", error);
-                            document.getElementById('weather').innerText = "Failed to load weather data.";
-                        }
-                    }
-                }
-            });
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/vue@2.6.14"></script>
-        <script src="https://unpkg.com/primevue/components/datatable/datatable.min.js"></script>
-    </body>
+    </header>
+    <div class="greeting"><h1>Welcome to the all-new Dukes Hub!</h1></div>
+    <div class="container">
+        <div class="content">
+            <p>We are excited to announce that the new Hub will officially launch in September 2024. Training on how to use the new platform will be provided during one of your INSET days at the beginning of the term.</p>
+            <p>Since you’ve found your way here early we encourage you to log in and explore the platform. You can start booking courses now and participate in active community areas.</p>
+            <p>Our goal is to make the sign-in process as smooth as possible allowing you to access our incredible courses without any hassle. We’ve collaborated with your institution’s IT team to connect your school email address to our system.</p>
+        </div>
+        <div class="video">
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe src="https://player.vimeo.com/video/951493603?h=014b1c414c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="L&amp;D courses intro 2024/25"></iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <div class="login-guide">
+            <h2>Easy Sign-In with Microsoft</h2>
+            <p>If your institution uses Microsoft, signing into the Dukes Hub is straightforward. Simply click the button below to be directed to the SSO login page.</p>
+            <h2>Easy Sign-In with Google</h2>
+            <p>If your institution uses Google you will need to register your account first. Don't worry—you won’t need to remember a new username or password. Just follow these steps:</p>
+            <p>Click the SSO sign-in button then select the "Create account" link.</p>
+            <p>Click "Sign up with Google."</p>
+            <p>Enter your institution’s email address and password or if you are already logged in to your browser simply select your account name.</p>
+            <p>Your Google account is now linked to Dukes Hub and you can use it to log in.</p>
+            <p>We hope you enjoy exploring the new Dukes Hub!</p>
+            <div class="login-buttons">
+                <a class="button" href="https://app.dukeshub.com" target="_blank">Sign in with Microsoft</a>
+                <a class="button" href="https://app.dukeshub.com" target="_blank">Sign in with Google</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Dukes Education
+    </footer>
+</body>
 </html>
