@@ -70,8 +70,10 @@
         }
         .content {
             margin-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
             background: white;
-            padding: 20px;
+            padding: 40px 120px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -86,11 +88,14 @@
         }
         .login-buttons {
             margin: 20px 0;
+            display: flex;
+            flex-wrap: nowrap;
         }
         .login-buttons a {
-            display: inline-block;
+            text-align: center;
             margin: 10px;
-            padding: 10px 20px;
+            width: 300px;
+            padding: 16px 20px;
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -102,6 +107,12 @@
             padding: 10px;
             background-color: #221C35;
             color: white;
+        }
+        ol {
+            padding: 1rem;
+        }
+        ol li {
+            margin: 1rem 0;
         }
     </style>
 </head>
@@ -115,7 +126,42 @@
     <div class="greeting"><h1>Welcome to the all-new Dukes Hub!</h1></div>
     <div class="container">
         <div class="content">
-            <p>We are excited to announce that the new Hub will officially launch in September 2024. Training on how to use the new platform will be provided during one of your INSET days at the beginning of the term.</p>
+            <div class="login-guide">
+                <h2>Quick Start Guide:</h2>
+                <ol>
+                    <li><strong>Access the Hub:</strong> Click on <a href="https://app.dukeshub.com/learn">GO TO THE HUB</a> to start.</li>
+                    <li><strong>Sign in:</strong>
+                        <ul>
+                            <li>Click ‘Sign-in using SSO’</li>
+                            <a href="https://app.dukeshub.com/learn"><img src="https://dukeseducation.com/wp-content/uploads/2024/07/sso.png" alt=""></a>
+                            <li>If already logged into your browser you’ll be taken straight to the Dukes Hub home page.</li>
+                            <li>If not, enter your school or business email and click ‘Next’.</li>
+                            <img src="https://dukeseducation.com/wp-content/uploads/2024/07/sign-in.png" alt="">
+                        </ul>
+                    </li>
+
+                    <li><strong>Account not recognised?</strong></li>
+                    <p>There will be occasions where you are required to create an account. If you are unable to sign-in using the above methods or if your school or business uses Google for SSO you will need to create an account. Don't worry—you won’t need to remember a new username or password. Just follow these steps to link your school or business account to the Dukes Hub:</p>
+                    <ul>
+                        <li>Click ‘No account? Create One!’ on the sign-in page.</li>
+                        <img src="https://dukeseducation.com/wp-content/uploads/2024/07/create-account.png" alt="">
+                        <li>Choose:
+                            <ul>
+                                <li>Microsoft users: Click ‘sign up with email’.</li>
+                                <li>Google users: Click ‘Sign up with Google’.</li>
+                            </ul>
+                        </li>
+                        <li>Follow prompts using your school or business email.</li>
+                    </ul>
+                    <p>&nbsp;</p>
+                    <li><p><strong>Need Help?</strong> If you can’t sign in click <a href="#">GET HELP</a> to get assistance.</p></li>
+                </ol>
+                <div class="login-buttons">
+                    <a class="button" href="https://app.dukeshub.com" target="_blank">GO TO THE HUB</a>
+                    <a class="button" href="https://forms.office.com/pages/responsepage.aspx?id=LrGXYuq0e0WqZpeyLa4O5GwBUTQ57vNJsbnAgX_bQSNUNEY5TTVZMDZGOFJSQUEzS0gwSjQ4WlJKSi4u" target="_blank">GET HELP</a>
+                </div> 
+            </div>
+            <!--<p>We are excited to announce that the new Hub will officially launch in September 2024. Training on how to use the new platform will be provided during one of your INSET days at the beginning of the term.</p>
             <p>Since you’ve found your way here early we encourage you to log in and explore the platform. You can start booking courses now and participate in active community areas.</p>
             <p>Our goal is to make the sign-in process as smooth as possible allowing you to access our incredible courses without any hassle. We’ve collaborated with your institution’s IT team to connect your school email address to our system.</p>
             <div class="login-guide">
@@ -133,7 +179,7 @@
                     <a class="button" href="https://app.dukeshub.com" target="_blank">Sign in with Google</a>
                     <a class="button" href="https://forms.office.com/pages/responsepage.aspx?id=LrGXYuq0e0WqZpeyLa4O5GwBUTQ57vNJsbnAgX_bQSNUNEY5TTVZMDZGOFJSQUEzS0gwSjQ4WlJKSi4u" target="_blank">Get Help</a>
                 </div>
-            </div>
+            </div>-->
         </div>
         <div class="video">
             <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/949120222?h=8e22952f56&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Welcome to the new Dukes Learning and Development hub"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>            </div>
